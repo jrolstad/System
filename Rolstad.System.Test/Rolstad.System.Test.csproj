@@ -32,6 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AWSSDK, Version=1.3.4.1, Culture=neutral, PublicKeyToken=cd2d24cd2bace800, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\AWS SDK\AWSSDK.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\lib\log4net\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\lib\NUnit\nunit.framework.dll</HintPath>
     </Reference>
@@ -46,8 +53,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\Given_an_enumerable_of_string\When_enumerating_over_it.cs" />
+    <Compile Include="Extensions\Given_an_enumerable_of_string\When_segmenting_it_to_4_items_each.cs" />
+    <Compile Include="Logging\Given_an_amazon_sns_appender\When_logging_an_error.cs" />
+    <Compile Include="Logging\Given_an_amazon_sns_appender\When_logging_a_message.cs" />
+    <Compile Include="Logging\Given_a_method_logger\When_logging_method_details_at_the_info_level.cs" />
+    <Compile Include="Logging\Given_a_method_logger\When_logging_method_details_at_the_debug_level.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Rolstad.System\Rolstad.System.csproj">
+      <Project>{DDF43AA6-636C-4712-8B4D-7F94F963A009}</Project>
+      <Name>Rolstad.System</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

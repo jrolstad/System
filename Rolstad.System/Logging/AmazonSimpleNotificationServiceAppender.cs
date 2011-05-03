@@ -33,7 +33,7 @@ namespace Rolstad.System.Logging
         /// <summary>
         /// SNS instanced to use for sending
         /// </summary>
-        private AmazonSimpleNotificationService NotificationService { get; set; }
+        internal AmazonSimpleNotificationService NotificationService { get; set; }
 
         /// <summary>
         /// Override of the append method.  This is where the message is sent to the SNS

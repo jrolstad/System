@@ -21,10 +21,10 @@ namespace Rolstad.System.Logging
     /// <summary>
     /// Utility class to log method ins / outs
     /// </summary>
-    public class MethodLogger
+    public class MethodLogger : IDisposable
     {
         private string MethodName { get; set; }
-        private ILog Log { get; set; }
+        internal ILog Log { get; set; }
         private DateTime StartTime { get; set; }
         private MethodLoggingLevel LoggingLevel { get; set; }
 
