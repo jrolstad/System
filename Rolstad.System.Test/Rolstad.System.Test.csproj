@@ -55,6 +55,8 @@
   <ItemGroup>
     <Compile Include="Extensions\Given_an_enumerable_of_string\When_enumerating_over_it.cs" />
     <Compile Include="Extensions\Given_an_enumerable_of_string\When_segmenting_it_to_4_items_each.cs" />
+    <Compile Include="Extensions\Given_a_nullable_value\When_obtaining_its_string_representation.cs" />
+    <Compile Include="Extensions\Given_a_string_value\When_using_extension_methods.cs" />
     <Compile Include="Logging\Given_an_amazon_sns_appender\When_logging_an_error.cs" />
     <Compile Include="Logging\Given_an_amazon_sns_appender\When_logging_a_message.cs" />
     <Compile Include="Logging\Given_a_method_logger\When_logging_method_details_at_the_info_level.cs" />

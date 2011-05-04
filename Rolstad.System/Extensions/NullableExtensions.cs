@@ -30,7 +30,7 @@ namespace Rolstad.System.Extensions
         /// <returns></returns>
         public static string ToString<T>(this T? value, string formatString, IFormatProvider formatProvider) where T : struct,IFormattable
         {
-            var result = string.Empty;
+            string result = null;
             if (value.HasValue)
             {
                 result = value.Value.ToString(formatString, formatProvider);
