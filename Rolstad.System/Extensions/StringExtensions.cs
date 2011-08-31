@@ -99,7 +99,7 @@ namespace Rolstad.System.Extensions
         /// <returns></returns>
         public static bool SafeContains(this string stringToEvaluate, string contains)
         {
-            return stringToEvaluate == null ? false : stringToEvaluate.Contains(contains);
+            return stringToEvaluate != null && stringToEvaluate.Contains(contains);
         }
 
         /// <summary>
