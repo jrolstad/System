@@ -32,13 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AWSSDK, Version=1.3.11.0, Culture=neutral, PublicKeyToken=cd2d24cd2bace800, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\AWSSDK.1.3.11.0\lib\AWSSDK.dll</HintPath>
-    </Reference>
-    <Reference Include="log4net">
-      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -59,14 +52,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\Given_an_enumerable_of_string\When_enumerating_over_it.cs" />
-    <Compile Include="Extensions\Given_an_enumerable_of_string\When_segmenting_it_to_4_items_each.cs" />
-    <Compile Include="Extensions\Given_a_nullable_value\When_obtaining_its_string_representation.cs" />
-    <Compile Include="Extensions\Given_a_string_value\When_using_extension_methods.cs" />
-    <Compile Include="Logging\Given_an_amazon_sns_appender\When_logging_an_error.cs" />
-    <Compile Include="Logging\Given_an_amazon_sns_appender\When_logging_a_message.cs" />
-    <Compile Include="Logging\Given_a_method_logger\When_logging_method_details_at_the_info_level.cs" />
-    <Compile Include="Logging\Given_a_method_logger\When_logging_method_details_at_the_debug_level.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
