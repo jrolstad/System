@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{42AFFA27-EACD-4640-B74B-0DBF82FF8FE2}</ProjectGuid>
+    <ProjectGuid>{6B249C3E-3926-4D7E-89B2-9482E0983B68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Rolstad.Extensions.Test</RootNamespace>
-    <AssemblyName>Rolstad.Extensions.Test</AssemblyName>
+    <RootNamespace>Rolstad.MVC</RootNamespace>
+    <AssemblyName>Rolstad.MVC</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,20 +34,9 @@
     <Reference Include="log4net">
       <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="nunit.mocks">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
-    </Reference>
-    <Reference Include="pnunit.framework">
-      <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>..\packages\RhinoMocks.3.6\lib\Rhino.Mocks.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,24 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\Given_an_enumerable_of_string\When_converting_to_a_dictionary.cs" />
-    <Compile Include="Extensions\Given_an_enumerable_of_string\When_enumerating_over_it.cs" />
-    <Compile Include="Extensions\Given_an_enumerable_of_string\When_segmenting_it_to_4_items_each.cs" />
-    <Compile Include="Extensions\Given_a_nullable_value\When_obtaining_its_string_representation.cs" />
-    <Compile Include="Extensions\Given_a_string_value\When_using_extension_methods.cs" />
+    <Compile Include="Errors\HandleErrorAndLogAttribute.cs" />
+    <Compile Include="Extensions\ResultExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Rolstad.Extensions\Rolstad.Extensions.csproj">
       <Project>{D0E3E2AA-27F9-4230-ABA8-7E35005F2EBD}</Project>
       <Name>Rolstad.Extensions</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

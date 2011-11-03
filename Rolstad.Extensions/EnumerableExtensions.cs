@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 
 namespace Rolstad.Extensions
@@ -49,6 +50,21 @@ namespace Rolstad.Extensions
                     .ToArray();
             }
             return segmented;
+        }
+
+        public static Dictionary<TKey, TElement> ToDictionaryExplicit<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)       
+        {
+            try
+            {
+                return source.ToDictionary(keySelector, elementSelector);
+            }
+            catch (ArgumentException exception)
+            {
+                var duplicates = source.GroupBy(keySelector).Where(g => g.Count() > 1).Select(g => g.Key).ToArray();
+                var duplicateMessage = string.Join(duplicates, ",");
+                var message = "Unable to convert to dictionary since keys are not unique. Duplicate keys are: {0}".StringFormat();
+                throw new ArgumentException(message,exception);
+            }
         }
     }
 }
