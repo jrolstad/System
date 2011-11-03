@@ -61,9 +61,26 @@ namespace Rolstad.Extensions
             catch (ArgumentException exception)
             {
                 var duplicates = source.GroupBy(keySelector).Where(g => g.Count() > 1).Select(g => g.Key).ToArray();
-                var duplicateMessage = string.Join(duplicates, ",");
-                var message = "Unable to convert to dictionary since keys are not unique. Duplicate keys are: {0}".StringFormat();
+                var duplicateMessage = string.Join(",", duplicates);
+                var message = "Unable to convert to dictionary since keys are not unique. Duplicate keys are: {0}".StringFormat(duplicateMessage);
+
                 throw new ArgumentException(message,exception);
+            }
+        }
+
+        public static Dictionary<TKey, TSource> ToDictionaryExplicit<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
+        {
+            try
+            {
+                return source.ToDictionary(keySelector);
+            }
+            catch (ArgumentException exception)
+            {
+                var duplicates = source.GroupBy(keySelector).Where(g => g.Count() > 1).Select(g => g.Key).ToArray();
+                var duplicateMessage = string.Join(",", duplicates);
+                var message = "Unable to convert to dictionary since keys are not unique. Duplicate keys are: {0}".StringFormat(duplicateMessage);
+
+                throw new ArgumentException(message, exception);
             }
         }
     }
