@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyExtensions.cs" />
+    <Compile Include="CollectionExtensions.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="NullableExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

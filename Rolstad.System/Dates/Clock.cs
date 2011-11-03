@@ -24,6 +24,14 @@ namespace Rolstad.System.Dates
         }
 
         /// <summary>
+        /// The current date
+        /// </summary>
+        public static DateTime Today
+        {
+            get { return Now.Date; }
+        }
+
+        /// <summary>
         /// Let the clock start flowing again
         /// </summary>
         public static void Thaw()

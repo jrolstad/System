@@ -18,6 +18,9 @@ namespace Rolstad.Extensions
         /// <param name="action">Action to run</param>
         public static IEnumerable<T> Each<T>(this IEnumerable<T> source, Action<T> action)
         {
+            if(source == null) throw new ArgumentNullException("source");
+            if(action == null) throw new ArgumentNullException("action");
+
             foreach (var item in source)
             {
                 action(item);
@@ -52,8 +55,22 @@ namespace Rolstad.Extensions
             return segmented;
         }
 
+        /// <summary>
+        /// Converts an enumerable to a dictionary.  If it can't, then gives a good reason why
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="TElement"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="keySelector"></param>
+        /// <param name="elementSelector"></param>
+        /// <returns></returns>
         public static Dictionary<TKey, TElement> ToDictionaryExplicit<TSource, TKey, TElement>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)       
         {
+            if(source == null) throw new ArgumentNullException("source");
+            if(keySelector.Equals(null)) throw new ArgumentNullException("keySelector");
+            if(elementSelector.Equals(null)) throw new ArgumentNullException("keySelector");
+
             try
             {
                 return source.ToDictionary(keySelector, elementSelector);
@@ -68,8 +85,19 @@ namespace Rolstad.Extensions
             }
         }
 
+        /// <summary>
+        /// Converts an enumerable to a dictionary.  If it can't, then gives a good reason why
+        /// </summary>
+        /// <typeparam name="TSource"></typeparam>
+        /// <typeparam name="TKey"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="keySelector"></param>
+        /// <returns></returns>
         public static Dictionary<TKey, TSource> ToDictionaryExplicit<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
         {
+            if(source == null) throw new ArgumentNullException("source");
+            if(keySelector.Equals(null)) throw new ArgumentNullException("keySelector");
+
             try
             {
                 return source.ToDictionary(keySelector);
@@ -81,6 +109,32 @@ namespace Rolstad.Extensions
                 var message = "Unable to convert to dictionary since keys are not unique. Duplicate keys are: {0}".StringFormat(duplicateMessage);
 
                 throw new ArgumentException(message, exception);
+            }
+        }
+
+        /// <summary>
+        /// Tries to get a value from a dictionary.  If it can't, then tells what the keys are
+        /// </summary>
+        /// <typeparam name="TKey"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public static TValue Value<TKey,TValue>(this IDictionary<TKey,TValue> source,TKey key )
+        {
+            if(source == null) throw new ArgumentNullException("source");
+            if(key.Equals(null)) throw new ArgumentNullException("key");
+
+            try
+            {
+                return source[key];
+            }
+            catch (KeyNotFoundException exception)
+            {
+                var keysMessage = string.Join(",", source.Keys);
+                var message = "Unable to find value for key '{0}'. Available keys are: {0}".StringFormat(keysMessage);
+
+                throw new KeyNotFoundException(message, exception);
             }
         }
     }
