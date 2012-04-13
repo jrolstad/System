@@ -6,6 +6,7 @@ namespace Rolstad.Extensions
     /// <summary>
     /// Extension Methods for strings
     /// </summary>
+    [Obsolete("Use Directus.Extensions instead")]
     public static class StringExtensions
     {
         /// <summary>

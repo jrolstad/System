@@ -1,3 +1,4 @@
+using System;
 using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
 using log4net.Appender;
@@ -8,6 +9,7 @@ namespace Rolstad.Logging.log4net
     /// <summary>
     /// Appender that sends messages to the Amazon Simple Notification Service
     /// </summary>
+    [Obsolete("Use Directus.Log4net instead")]
     public class AmazonSimpleNotificationServiceAppender : AppenderSkeleton
     {
         /// <summary>

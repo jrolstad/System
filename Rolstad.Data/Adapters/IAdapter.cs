@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Retrospect.Adapters
 {
@@ -7,6 +8,7 @@ namespace Retrospect.Adapters
     /// </summary>
     /// <typeparam name="From">Item adapting from</typeparam>
     /// <typeparam name="To">Item adapting to</typeparam>
+    [Obsolete]
     public interface IAdapter<From,To>
     {
         /// <summary>

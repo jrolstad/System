@@ -4,6 +4,7 @@ using Rolstad.Extensions;
 
 namespace Rolstad.MVC.Extensions
 {
+    [Obsolete]
     public static class ResultExtensions
     {
         /// <summary>

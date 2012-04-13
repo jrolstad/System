@@ -1,10 +1,12 @@
-﻿using Ninject;
+﻿using System;
+using Ninject;
 
 namespace Rolstad.DependencyInjection
 {
     /// <summary>
     /// Registers a given set of containers
     /// </summary>
+    [Obsolete]
     public interface IContainerRegistration
     {
         /// <summary>

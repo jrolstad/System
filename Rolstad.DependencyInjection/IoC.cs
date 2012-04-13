@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Ninject;
 
@@ -7,6 +8,7 @@ namespace Rolstad.DependencyInjection
     /// <summary>
     /// IoC wrapper class
     /// </summary>
+    [Obsolete]
     public static class IoC
     {
         /// <summary>

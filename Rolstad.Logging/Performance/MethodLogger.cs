@@ -8,6 +8,7 @@ namespace Rolstad.Logging.Performance
     /// <summary>
     /// Utility class to log method ins / outs
     /// </summary>
+    [Obsolete]
     public class MethodLogger : IDisposable
     {
         private string MethodName { get; set; }

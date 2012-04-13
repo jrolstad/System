@@ -8,6 +8,7 @@ namespace Rolstad.Data.Providers
     /// </summary>
     /// <typeparam name="T">Type of item being provisioned</typeparam>
     /// <typeparam name="I">Identifier for the item</typeparam>
+    [Obsolete]
     public interface IDataProvider<T,I>
     {
         /// <summary>

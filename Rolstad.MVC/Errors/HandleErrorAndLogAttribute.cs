@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using log4net;
 
 namespace Rolstad.MVC.Errors
@@ -6,6 +7,7 @@ namespace Rolstad.MVC.Errors
     /// <summary>
     /// When an exception occurs, logs it
     /// </summary>
+    [Obsolete("Use Directus.Log4Net.MVC instead")]
     public class HandleErrorAndLogAttribute:HandleErrorAttribute
     {
         /// <summary>

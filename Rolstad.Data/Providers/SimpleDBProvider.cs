@@ -11,6 +11,7 @@ namespace Rolstad.Data.Providers
     /// </summary>
     /// <typeparam name="T">Type to persist</typeparam>
     /// <typeparam name="I">Type of the identifier</typeparam>
+    [Obsolete("Use Directus.SimpleDB instead")]
     public class SimpleDBProvider<T,I>:IDataProvider<T,I> where T : class, new()
     {
         private static ILog Logger = LogManager.GetLogger(typeof (SimpleDBProvider<T, I>));

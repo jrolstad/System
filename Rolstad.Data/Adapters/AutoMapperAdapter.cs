@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Retrospect.Adapters
@@ -8,6 +9,7 @@ namespace Retrospect.Adapters
     /// </summary>
     /// <typeparam name="TFrom">What to convert from</typeparam>
     /// <typeparam name="TTo">What to convert to</typeparam>
+    [Obsolete]
     public class AutoMapperAdapter<TFrom,TTo>:IAdapter<TFrom,TTo>
     {
         private static object lockObject = new object();

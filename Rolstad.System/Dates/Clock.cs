@@ -6,6 +6,7 @@ namespace Rolstad.System.Dates
     /// A wrapper around the static operations on <see cref="DateTime"/> which allows time
     /// to be frozen.
     /// </summary>
+    [Obsolete("Use Directus.Core instead")]
     public static class Clock
     {
         private static bool Frozen { get; set; }
