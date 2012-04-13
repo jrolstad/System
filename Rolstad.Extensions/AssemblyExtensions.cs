@@ -9,6 +9,7 @@ namespace Rolstad.Extensions
     /// <summary>
     /// Extension methods for assemblies
     /// </summary>
+    [Obsolete("Use Directus.Extensions instead")]
     public static class AssemblyExtensions
     {
         /// <summary>

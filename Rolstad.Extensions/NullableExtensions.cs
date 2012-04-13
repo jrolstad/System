@@ -6,6 +6,7 @@ namespace Rolstad.Extensions
     /// <summary>
     /// Extension Methods for nullables
     /// </summary>
+    [Obsolete("Use Directus.Extensions instead")]
     public static class NullableExtensions
     {
         /// <summary>

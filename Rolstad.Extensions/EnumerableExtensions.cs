@@ -8,6 +8,7 @@ namespace Rolstad.Extensions
     /// <summary>
     /// Extensions for Enumerable
     /// </summary>
+    [Obsolete("Use Directus.Extensions instead")]
     public static class EnumerableExtensions
     {
         /// <summary>

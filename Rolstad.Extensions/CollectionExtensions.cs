@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Rolstad.Extensions
 {
     /// <summary>
     /// Extension methods for ICollection
     /// </summary>
+    [Obsolete("Use Directus.Extensions instead")]
     public static class CollectionExtensions
     {
         /// <summary>
